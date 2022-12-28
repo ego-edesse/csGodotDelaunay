@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using Godot;
 
 public struct Rectf {
 	
@@ -38,15 +38,15 @@ public struct Rectf {
 		}
 	}
 
-	public Vector2f topLeft {
+	public Godot.Vector2 topLeft {
 		get {
-			return new Vector2f(left, top);
+			return new Godot.Vector2(left, top);
 		}
 	}
 
-	public Vector2f bottomRight {
+	public Godot.Vector2 bottomRight {
 		get {
-			return new Vector2f(right, bottom);
+			return new Godot.Vector2(right, bottom);
 		}
 	}
 }

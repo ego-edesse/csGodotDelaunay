@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Godot;
 
 namespace csDelaunay {
 
@@ -63,8 +64,8 @@ namespace csDelaunay {
 			return new Rectf(xmin, ymin, xmax - xmin, ymax - ymin);
 		}
 
-		public List<Vector2f> SiteCoords() {
-			List<Vector2f> coords = new List<Vector2f>();
+		public List<Godot.Vector2> SiteCoords() {
+			List<Godot.Vector2> coords = new List<Godot.Vector2>();
 			foreach (Site site in sites) {
 				coords.Add(site.Coord);
 			}
@@ -89,8 +90,8 @@ namespace csDelaunay {
 			return circles;
 		}
 
-		public List<List<Vector2f>> Regions(Rectf plotBounds) {
-			List<List<Vector2f>> regions = new List<List<Vector2f>>();
+		public List<List<Godot.Vector2>> Regions(Rectf plotBounds) {
+			List<List<Godot.Vector2>> regions = new List<List<Godot.Vector2>>();
 			foreach (Site site in sites) {
 				regions.Add(site.Region(plotBounds));
 			}

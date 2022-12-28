@@ -1,8 +1,6 @@
 csDelaunay
 ==========
 
-C# delaunay library
+Godot C# Delaunay library for generating Voronoi diagram. Includes Lloyd relaxation.
 
-This is a port and interpretation of actionscript library [as3delaunay](http://nodename.github.io/as3delaunay/)
-
-I also added a Lloyd relaxation function
+This is a fork of PouletFrit work for Unity/general purpose (https://github.com/PouletFrit/csDelaunay). I just refactored some code to be able to use Godot built-in Vector2.

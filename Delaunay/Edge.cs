@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using Godot;
 
 namespace csDelaunay {
 
@@ -68,7 +70,7 @@ namespace csDelaunay {
 		}
 		#endregion
 
-		public static List<Edge> SelectEdgesForSitePoint(Vector2f coord, List<Edge> edgesToTest) {
+		public static List<Edge> SelectEdgesForSitePoint(Godot.Vector2 coord, List<Edge> edgesToTest) {
 			return edgesToTest.FindAll(
 			delegate(Edge e) {
 				if (e.LeftSite != null) {
@@ -111,7 +113,7 @@ namespace csDelaunay {
 		}
 
 		public float SitesDistance() {
-			return (LeftSite.Coord - RightSite.Coord).magnitude;
+			return (LeftSite.Coord - RightSite.Coord).Length();
 		}
 
 		public static int CompareSitesDistances_MAX(Edge edge0, Edge edge1) {
@@ -132,8 +134,8 @@ namespace csDelaunay {
 
 		// Once clipVertices() is called, this Disctinary will hold two Points
 		// representing the clipped coordinates of the left and the right ends...
-		private LRCollection<Vector2f> clippedVertices;
-		public LRCollection<Vector2f> ClippedEnds {get{return clippedVertices;}}
+		private LRCollection<Godot.Vector2> clippedVertices;
+		public LRCollection<Godot.Vector2> ClippedEnds {get{return clippedVertices;}}
 
 		// Unless the entire Edge is outside the bounds.
 		// In that case visible will be false:
@@ -283,13 +285,13 @@ namespace csDelaunay {
 				}
 			}
 
-			clippedVertices = new LRCollection<Vector2f>();
+			clippedVertices = new LRCollection<Godot.Vector2>();
 			if (vertex0 == leftVertex) {
-				clippedVertices[LR.LEFT] = new Vector2f(x0, y0);
-				clippedVertices[LR.RIGHT] = new Vector2f(x1, y1);
+				clippedVertices[LR.LEFT] = new Godot.Vector2(x0, y0);
+				clippedVertices[LR.RIGHT] = new Godot.Vector2(x1, y1);
 			} else {
-				clippedVertices[LR.RIGHT] = new Vector2f(x0, y0);
-				clippedVertices[LR.LEFT] = new Vector2f(x1, y1);
+				clippedVertices[LR.RIGHT] = new Godot.Vector2(x0, y0);
+				clippedVertices[LR.LEFT] = new Godot.Vector2(x1, y1);
 			}
 		}
 		#endregion

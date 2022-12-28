@@ -3,6 +3,6 @@
 namespace csDelaunay {
 	public interface ICoord {
 
-		Vector2f Coord {get;set;}
+        Godot.Vector2 Coord {get;set;}
 	}
 }

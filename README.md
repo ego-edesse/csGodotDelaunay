@@ -1,4 +1,4 @@
-csDelaunay
+csDelaunay for Godot with C#
 ==========
 
 Godot C# Delaunay library for generating Voronoi diagram. Includes Lloyd relaxation.
